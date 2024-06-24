@@ -71,6 +71,7 @@ Please be aware that all environment variables prefixed with `NEXT_PUBLIC_` will
 | --- | --- | --- | --- | --- | --- | --- |
 | NEXT_PUBLIC_APP_PROTOCOL | `http \| https` | App url schema | - | `https` | `http` | v1.0.x+ |
 | NEXT_PUBLIC_APP_HOST | `string` | App host | Required | - | `blockscout.com` | v1.0.x+ |
+| NEXT_PUBLIC_BUILDBEAR_BASE | `string` | BuildBear Base. This is required to show the "view on buildbear" button | Required | - | `buildbear.io` | v1.0.x+ |
 | NEXT_PUBLIC_APP_PORT | `number` | Port where app is running | - | `3000` | `3001` | v1.0.x+ |
 | NEXT_PUBLIC_USE_NEXT_JS_PROXY | `boolean` | Tells the app to proxy all APIs request through the NextJS app. **We strongly advise not to use it in the production environment**, since it can lead to performance issues of the NodeJS server | - | `false` | `true` | v1.8.0+ |
 
