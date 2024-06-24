@@ -25,7 +25,7 @@ export const ViewOnBuildBear = () => {
           sandboxId ?
             `https://explorer.${ appConfig?.app?.buildbearBase }/${ sandboxId }${
               router?.asPath ? router?.asPath : ''
-            }` : `https://explorer.${ appConfig?.app?.buildbearBase }`
+            }?utm_source=blockscout-${ sandboxId }` : `https://explorer.${ appConfig?.app?.buildbearBase }?utm_source=blockscout-${ sandboxId }`
         }
         target="_blank"
         rel="noopener noreferrer"
