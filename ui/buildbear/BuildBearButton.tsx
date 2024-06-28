@@ -19,7 +19,7 @@ export const ViewOnBuildBear = () => {
   }, []);
 
   return (
-    <Box position="fixed" right="12" bottom="12">
+    <Box position="fixed" right="100" bottom="8">
       <a
         href={
           sandboxId ?
