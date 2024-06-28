@@ -3,6 +3,7 @@ import { GrowthBookProvider } from '@growthbook/growthbook-react';
 import * as Sentry from '@sentry/react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 import type { AppProps } from 'next/app';
 import React from 'react';
 
@@ -76,6 +77,10 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
               </GrowthBookProvider>
               <ReactQueryDevtools buttonPosition="bottom-left" position="left"/>
               <GoogleAnalytics/>
+              <TawkMessengerReact
+                propertyId={ config.app.buildbearTawkPropertyId }
+                widgetId={ config.app.buildbearTawkWidgetId }
+              />
             </QueryClientProvider>
           </AppContextProvider>
         </Web3ModalProvider>
