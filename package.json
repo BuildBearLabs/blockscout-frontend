@@ -118,7 +118,8 @@
     "valibot": "0.38.0",
     "viem": "2.21.54",
     "wagmi": "2.14.0",
-    "xss": "^1.0.14"
+    "xss": "^1.0.14",
+    "@tawk.to/tawk-messenger-react": "^2.0.2"
   },
   "devDependencies": {
     "@eslint/compat": "1.2.2",

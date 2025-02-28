@@ -2,6 +2,7 @@ import { type ChakraProps } from '@chakra-ui/react';
 import { GrowthBookProvider } from '@growthbook/growthbook-react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 import type { AppProps } from 'next/app';
 import React from 'react';
 
@@ -20,6 +21,7 @@ import useLoadFeatures from 'lib/growthbook/useLoadFeatures';
 import useNotifyOnNavigation from 'lib/hooks/useNotifyOnNavigation';
 import { clientConfig as rollbarConfig, Provider as RollbarProvider } from 'lib/rollbar';
 import { SocketProvider } from 'lib/socket/context';
+import { ViewOnBuildBear } from 'ui/buildbear/BuildBearButton';
 import RewardsLoginModal from 'ui/rewards/login/RewardsLoginModal';
 import AppErrorBoundary from 'ui/shared/AppError/AppErrorBoundary';
 import AppErrorGlobalContainer from 'ui/shared/AppError/AppErrorGlobalContainer';
@@ -85,6 +87,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
             </AppContextProvider>
           </Web3ModalProvider>
         </AppErrorBoundary>
+        <ViewOnBuildBear/>
+        <TawkMessengerReact
+          propertyId={ config.app.buildbearTawkPropertyId }
+          widgetId={ config.app.buildbearTawkWidgetId }
+        />
       </RollbarProvider>
     </ChakraProvider>
   );
