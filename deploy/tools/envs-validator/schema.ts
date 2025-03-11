@@ -673,6 +673,9 @@ const schema = yup
     NEXT_PUBLIC_APP_PORT: yup.number().positive().integer(),
     NEXT_PUBLIC_APP_ENV: yup.string(),
     NEXT_PUBLIC_APP_INSTANCE: yup.string(),
+    NEXT_PUBLIC_BUILDBEAR_BASE: yup.string(),
+    NEXT_PUBLIC_TAWK_PROPERTYID: yup.string(),
+    NEXT_PUBLIC_TAWK_WIDGETID: yup.string(),
 
     // 2. Blockchain parameters
     NEXT_PUBLIC_NETWORK_NAME: yup.string().required(),
