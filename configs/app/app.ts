@@ -20,6 +20,9 @@ const app = Object.freeze({
   baseUrl,
   useProxy: getEnvValue('NEXT_PUBLIC_USE_NEXT_JS_PROXY') === 'true',
   spriteHash,
+  buildbearBase: getEnvValue('NEXT_PUBLIC_BUILDBEAR_BASE'),
+  buildbearTawkPropertyId: getEnvValue('NEXT_PUBLIC_TAWK_PROPERTYID'),
+  buildbearTawkWidgetId: getEnvValue('NEXT_PUBLIC_TAWK_WIDGETID'),
 });
 
 export default app;
