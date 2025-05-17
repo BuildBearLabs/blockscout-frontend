@@ -2,6 +2,7 @@ import type { HTMLChakraProps } from '@chakra-ui/react';
 import { GrowthBookProvider } from '@growthbook/growthbook-react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 import type { AppProps } from 'next/app';
 import React from 'react';
 
@@ -20,6 +21,7 @@ import { clientConfig as rollbarConfig, Provider as RollbarProvider } from 'lib/
 import { SocketProvider } from 'lib/socket/context';
 import { Provider as ChakraProvider } from 'toolkit/chakra/provider';
 import { Toaster } from 'toolkit/chakra/toaster';
+import { ViewOnBuildBear } from 'ui/buildbear/BuildBearButton';
 import RewardsLoginModal from 'ui/rewards/login/RewardsLoginModal';
 import RewardsActivityTracker from 'ui/rewards/RewardsActivityTracker';
 import AppErrorBoundary from 'ui/shared/AppError/AppErrorBoundary';
@@ -94,6 +96,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
                     </SocketProvider>
                   </ScrollDirectionProvider>
                 </GrowthBookProvider>
+                <ViewOnBuildBear/>
+                <TawkMessengerReact
+                  propertyId={ config.app.buildbearTawkPropertyId ?? '' }
+                  widgetId={ config.app.buildbearTawkWidgetId ?? '' }
+                />
                 <ReactQueryDevtools buttonPosition="bottom-left" position="left"/>
                 <GoogleAnalytics/>
               </QueryClientProvider>

@@ -249,11 +249,11 @@ export default function useNavItems(): ReturnType {
     ].filter(Boolean);
 
     const otherNavItems: Array<NavItem> | Array<Array<NavItem>> = [
-      {
-        text: 'Verify contract',
-        nextRoute: { pathname: '/contract-verification' as const },
-        isActive: pathname.startsWith('/contract-verification'),
-      },
+      // {
+      //   text: 'Verify contract',
+      //   nextRoute: { pathname: '/contract-verification' as const },
+      //   isActive: pathname.startsWith('/contract-verification'),
+      // },
       config.features.gasTracker.isEnabled && {
         text: 'Gas tracker',
         nextRoute: { pathname: '/gas-tracker' as const },
@@ -291,12 +291,12 @@ export default function useNavItems(): ReturnType {
         icon: 'apps',
         isActive: pathname.startsWith('/app'),
       } : null,
-      config.features.stats.isEnabled ? {
-        text: 'Charts & stats',
-        nextRoute: { pathname: '/stats' as const },
-        icon: 'stats',
-        isActive: pathname.startsWith('/stats'),
-      } : null,
+      // config.features.stats.isEnabled ? {
+      //   text: 'Charts & stats',
+      //   nextRoute: { pathname: '/stats' as const },
+      //   icon: 'stats',
+      //   isActive: pathname.startsWith('/stats'),
+      // } : null,
       apiNavItems.length > 0 && {
         text: 'API',
         icon: 'restAPI',
@@ -308,6 +308,12 @@ export default function useNavItems(): ReturnType {
         icon: 'gear',
         isActive: otherNavItems.flat().some(item => isInternalItem(item) && item.isActive),
         subItems: otherNavItems,
+      },
+      {
+        text: 'Feedback',
+        url: 'https://tally.so/r/3xQOQk',
+        icon: 'email',
+        isActive: false,
       },
     ].filter(Boolean);
 
